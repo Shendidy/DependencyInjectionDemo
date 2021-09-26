@@ -6,11 +6,11 @@ namespace DependencyInjection
     {
         static void Main(string[] args)
         {
-            SendEmail _sendEmail = new SendEmail();
-            SendFax _sendFax = new SendFax();
+            IContactPerson _sendEmail = new SendEmail();
+            IContactPerson _sendFax = new SendFax();
 
-            Person person1 = new Person(_sendEmail, "Sherif");
-            Person person2 = new Person(_sendFax, "Maha");
+            IPerson person1 = new Person(_sendEmail, "Sherif");
+            IPerson person2 = new Person(_sendFax, "Maha");
 
             person1.ContactPerson();
             person2.ContactPerson();
